@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 32px;
   height: 100vh;
 }
 
@@ -18,22 +18,41 @@
 }
 
 /* Markdown-To-JSX */
-.AppMain .markdownReact article {
+.AppMain .markdownToJsx article {
   display: flex;
   flex-direction: column;
   gap: 16px;
   border: none;
 }
-.AppMain .markdownReact article table {
+.AppMain .markdownToJsx article table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid black;
 }
-.AppMain .markdownReact article th {
+.AppMain .markdownToJsx article th {
   border: 1px solid black;
   background-color: lightgrey;
 }
-.AppMain .markdownReact article td {
+.AppMain .markdownToJsx article td {
   border: 1px solid black;
 }
 
+/* React-Markdown */
+.AppMain .reactMarkdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+}
+.AppMain .reactMarkdown table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.AppMain .reactMarkdown th {
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+.AppMain .reactMarkdown td {
+  border: 1px solid black;
+}

@@ -1,9 +1,9 @@
 import "./App.css"
-import Markdown from "markdown-to-jsx"
+import MarkdownToJsx from "./components/MarkdownToJsx"
+import Mdx from "./components/Mdx"
+import ReactMarkdown from "./components/ReactMarkdown"
 
 import mockNoticiaInterna from "./mockNoticiaInterna.json"
-
-console.log("mockNoticiaInterna", mockNoticiaInterna.Content.Text)
 
 function App() {
   return (
@@ -13,14 +13,14 @@ function App() {
       </header>
       <main className="AppMain">
         <hr />
-        <h2>- Markdown-to-JSX -</h2>
+        <h2>-- Sin procesar --</h2>
+        <div>{mockNoticiaInterna.Content.Text}</div>
 
-        <div className="markdownReact">
-          <Markdown options={{ wrapper: "article" }}>
-            {mockNoticiaInterna.Content.Text}
-          </Markdown>
-        </div>
-        <hr />
+        <MarkdownToJsx />
+
+        <ReactMarkdown />
+
+        <Mdx />
       </main>
     </div>
   )
