@@ -1,5 +1,6 @@
 import "./App.css"
 import MarkdownToJsx from "./components/MarkdownToJsx"
+import Mdx from "./components/Mdx"
 import ReactMarkdown from "./components/ReactMarkdown"
 
 import mockNoticiaInterna from "./mockNoticiaInterna.json"
@@ -18,6 +19,8 @@ function App() {
         <MarkdownToJsx />
 
         <ReactMarkdown />
+
+        <Mdx />
       </main>
     </div>
   )
