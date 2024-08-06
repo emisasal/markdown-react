@@ -3,7 +3,7 @@ import Markdown from "markdown-to-jsx"
 
 import mockNoticiaInterna from "./mockNoticiaInterna.json"
 
-console.log("mockNoticiaInterna", mockNoticiaInterna.Content.Text)
+// console.log("mockNoticiaInterna", mockNoticiaInterna.Content.Text)
 
 function App() {
   return (
@@ -12,6 +12,9 @@ function App() {
         <h1>Pruebas con MarkDown</h1>
       </header>
       <main className="AppMain">
+        <hr />
+        <h2>-- Sin procesar --</h2>
+        <div>{mockNoticiaInterna.Content.Text}</div>
         <hr />
         <h2>- Markdown-to-JSX -</h2>
 
