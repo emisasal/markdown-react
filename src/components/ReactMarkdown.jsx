@@ -6,7 +6,9 @@ const ReactMarkdown = () => {
   return (
     <>
       <hr />
-      <h2>-- React-Markdown --</h2>
+      <br />
+      <h2>--- React-Markdown ---</h2>
+      <br />
       <div className="reactMarkdown">
         <Markdown remarkPlugins={[gfm]}>
           {mockNoticiaInterna.Content.Text}

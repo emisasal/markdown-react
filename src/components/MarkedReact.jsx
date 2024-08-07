@@ -6,7 +6,9 @@ const MarkedReact = () => {
   return (
     <>
       <hr />
-      <h2>-- Marked-React --</h2>
+      <br />
+      <h2>--- Marked-React ---</h2>
+      <br />
       <div className="markedReact">
       <Markdown>{mockNoticiaInterna.Content.Text}</Markdown>
       </div>
