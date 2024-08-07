@@ -12,7 +12,7 @@ function App() {
       </header>
       <main className="AppMain">
         <hr />
-        <h2>-- Sin procesar --</h2>
+        <h2>--- Sin procesar ---</h2>
         <div>{mockNoticiaInterna.Content.Text}</div>
 
         <MarkdownToJsx />

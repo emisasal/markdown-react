@@ -1,6 +1,7 @@
 import Markdown from "marked-react"
 
 import mockNoticiaInterna from "../mockNoticiaInterna.json"
+import HighlighterComponent from "./HighlighterComponent"
 
 const MarkedReact = () => {
   return (
@@ -10,7 +11,9 @@ const MarkedReact = () => {
       <h2>--- Marked-React ---</h2>
       <br />
       <div className="markedReact">
-      <Markdown>{mockNoticiaInterna.Content.Text}</Markdown>
+        <Markdown renderer={HighlighterComponent}>
+          {mockNoticiaInterna.Content.Text}
+        </Markdown>
       </div>
     </>
   )
