@@ -17,15 +17,17 @@
   gap: 16px;
 }
 
+.AppMain h2 {
+  text-align: center;
+}
+
 /* Markdown-To-JSX */
 .AppMain .markdownToJsx article {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: none;
 }
 .AppMain .markdownToJsx article table {
-  width: 100%;
   border-collapse: collapse;
   border: 1px solid black;
 }
@@ -42,10 +44,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: none;
 }
 .AppMain .reactMarkdown table {
-  width: 100%;
   border-collapse: collapse;
   border: 1px solid black;
 }
@@ -54,5 +54,23 @@
   background-color: lightgrey;
 }
 .AppMain .reactMarkdown td {
+  border: 1px solid black;
+}
+
+/* Marked-React */
+.AppMain .markedReact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.AppMain .markedReact table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.AppMain .markedReact th {
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+.AppMain .markedReact td {
   border: 1px solid black;
 }

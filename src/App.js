@@ -1,5 +1,6 @@
 import "./App.css"
 import MarkdownToJsx from "./components/MarkdownToJsx"
+import MarkedReact from "./components/MarkedReact"
 import ReactMarkdown from "./components/ReactMarkdown"
 import mockNoticiaInterna from "./mockNoticiaInterna.json"
 
@@ -17,6 +18,8 @@ function App() {
         <MarkdownToJsx />
 
         <ReactMarkdown />
+
+        <MarkedReact />
       </main>
     </div>
   )
