@@ -1,5 +1,6 @@
 import "./App.css"
 import MarkdownToJsx from "./components/MarkdownToJsx"
+import MarkedReact from "./components/MarkedReact"
 import ReactMarkdown from "./components/ReactMarkdown"
 import mockNoticiaInterna from "./mockNoticiaInterna.json"
 
@@ -11,12 +12,14 @@ function App() {
       </header>
       <main className="AppMain">
         <hr />
-        <h2>-- Sin procesar --</h2>
+        <h2>--- Sin procesar ---</h2>
         <div>{mockNoticiaInterna.Content.Text}</div>
 
         <MarkdownToJsx />
 
         <ReactMarkdown />
+
+        <MarkedReact />
       </main>
     </div>
   )
