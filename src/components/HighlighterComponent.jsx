@@ -1,8 +1,9 @@
 import Highlighter from "react-highlight-words"
 
-const palabrasBusqueda = []
+const palabrasBusqueda = "montoya AND santarelli"
 
-const palabrasAResaltar = ["a", "de", "del", "el", "la", "las", "los", "un", "una"]
+// const palabrasAResaltar = ["a", "de", "del", "el", "la", "las", "los", "un", "una"]
+const palabrasAResaltar = ["rugby", "partido", "jugadores", "puntos", "juego", "urba", "campo", "resultados", "pelota"]
 
 export function findChunksSoloPalabra({ searchWords, textToHighlight }) {
   const chunks = []
@@ -42,16 +43,16 @@ export const removeSeparators = (palabrasBusqueda) => {
 }
 
 const HighlighterComponent = ({ children }) => {
-  console.log("CH", children)
+  console.log("CHHH", children[0])
+  const childrenToString = children[0] || ""
   return (
     <Highlighter
-      // className="resaltado__wrapper"
-      // highlightTag={"span"}
-      // highlightClassName="resaltado"
-      // searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
-      searchWords={palabrasAResaltar}
+      className="resaltado__wrapper"
+      highlightTag={"span"}
+      highlightClassName="resaltado"
+      searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
       autoEscape={true}
-      textToHighlight={children[0] || ""}
+      textToHighlight={childrenToString}
       // findChunks={findChunksSoloPalabra}
     />
   )}

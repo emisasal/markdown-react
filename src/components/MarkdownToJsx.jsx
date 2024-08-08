@@ -14,14 +14,12 @@ const MarkdownToJsx = () => {
         <Markdown
           options={{
             wrapper: "article",
-            options: {
-              overrides: {
-                h3: {
-                  component: HighlighterComponent,
-                },
-                p: {
-                  component: HighlighterComponent,
-                },
+            overrides: {
+              h3: {
+                component: HighlighterComponent,
+              },
+              p: {
+                component: HighlighterComponent,
               },
             },
           }}

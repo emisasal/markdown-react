@@ -1,4 +1,5 @@
 import "./App.css"
+import HighlighterComponent from "./components/HighlighterComponent"
 import MarkdownToJsx from "./components/MarkdownToJsx"
 import MarkedReact from "./components/MarkedReact"
 import ReactMarkdown from "./components/ReactMarkdown"
@@ -14,6 +15,7 @@ function App() {
         <hr />
         <h2>--- Sin procesar ---</h2>
         <div>{mockNoticiaInterna.Content.Text}</div>
+        {/* <HighlighterComponent>{mockNoticiaInterna.Content.Text}</HighlighterComponent> */}
 
         <MarkdownToJsx />
 

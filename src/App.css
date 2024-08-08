@@ -77,9 +77,9 @@
 
 /* Resaltado */
 .resaltado__wrapper {
-  white-space: pre-line;
+  /* white-space: pre-line; */
   line-height: 24px;
-  padding: 16px 0;
+  /* padding: 16px 0; */
 }
 .resaltado {
   padding: 0;
