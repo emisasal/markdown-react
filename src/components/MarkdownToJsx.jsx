@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx"
 
-import HighlighterComponent from "./HighlighterComponent"
+import { HighlighterH3, HighlighterP } from "./HighlighterComponent"
 import mockNoticiaInterna from "../mockNoticiaInterna.json"
 
 const MarkdownToJsx = () => {
@@ -16,10 +16,10 @@ const MarkdownToJsx = () => {
             wrapper: "article",
             overrides: {
               h3: {
-                component: HighlighterComponent,
+                component: HighlighterH3,
               },
               p: {
-                component: HighlighterComponent,
+                component: HighlighterP,
               },
             },
           }}

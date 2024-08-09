@@ -3,7 +3,17 @@ import Highlighter from "react-highlight-words"
 const palabrasBusqueda = "montoya AND santarelli"
 
 // const palabrasAResaltar = ["a", "de", "del", "el", "la", "las", "los", "un", "una"]
-const palabrasAResaltar = ["rugby", "partido", "jugadores", "puntos", "juego", "urba", "campo", "resultados", "pelota"]
+const palabrasAResaltar = [
+  "rugby",
+  "partido",
+  "jugadores",
+  "puntos",
+  "juego",
+  "urba",
+  "campo",
+  "resultados",
+  "pelota",
+]
 
 export function findChunksSoloPalabra({ searchWords, textToHighlight }) {
   const chunks = []
@@ -42,11 +52,11 @@ export const removeSeparators = (palabrasBusqueda) => {
   return palabrasBusqueda
 }
 
-const HighlighterComponent = ({ children }) => {
-  console.log("CHHH", children[0])
+export const HighlighterH3 = ({ children }) => {
   const childrenToString = children[0] || ""
   return (
     <Highlighter
+      // unhighlightTag={"h3"}
       className="resaltado__wrapper"
       highlightTag={"span"}
       highlightClassName="resaltado"
@@ -55,6 +65,21 @@ const HighlighterComponent = ({ children }) => {
       textToHighlight={childrenToString}
       // findChunks={findChunksSoloPalabra}
     />
-  )}
+  )
+}
 
-export default HighlighterComponent
+export const HighlighterP = ({ children }) => {
+  const childrenToString = children[0] || ""
+  return (
+    <Highlighter
+      unhighlightTag={"p"}
+      className="resaltado__wrapper"
+      highlightTag={"span"}
+      highlightClassName="resaltado"
+      searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
+      autoEscape={true}
+      textToHighlight={childrenToString}
+      // findChunks={findChunksSoloPalabra}
+    />
+  )
+}
