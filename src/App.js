@@ -1,5 +1,5 @@
 import "./App.css"
-import HighlighterComponent from "./components/HighlighterComponent"
+// import HighlighterComponent from "./components/HighlighterComponent"
 import MarkdownToJsx from "./components/MarkdownToJsx"
 import MarkedReact from "./components/MarkedReact"
 import ReactMarkdown from "./components/ReactMarkdown"

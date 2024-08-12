@@ -1,8 +1,7 @@
 import Highlighter from "react-highlight-words"
 
-const palabrasBusqueda = "montoya AND santarelli"
+const palabrasBusqueda = "montoya AND santarelli AND diaz"
 
-// const palabrasAResaltar = ["a", "de", "del", "el", "la", "las", "los", "un", "una"]
 const palabrasAResaltar = [
   "rugby",
   "partido",
@@ -13,12 +12,20 @@ const palabrasAResaltar = [
   "campo",
   "resultados",
   "pelota",
+  "tiempo",
+  "tiempos",
+  "intencion",
 ]
 
 export function findChunksSoloPalabra({ searchWords, textToHighlight }) {
+  let formatTextToHighlight = textToHighlight
+  if (typeof textToHighlight === "object") {
+    formatTextToHighlight = textToHighlight.props.children[0]
+  }
+
   const chunks = []
-  const textToHighlightNormalized = textToHighlight
-    ? textToHighlight.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  const textToHighlightNormalized = formatTextToHighlight
+    ? formatTextToHighlight.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     : ""
   const textToHighlightLowerCase = textToHighlightNormalized.toLowerCase()
   const searchWordsNormalized = searchWords.map((word) =>
@@ -52,34 +59,64 @@ export const removeSeparators = (palabrasBusqueda) => {
   return palabrasBusqueda
 }
 
+// H3
 export const HighlighterH3 = ({ children }) => {
   const childrenToString = children[0] || ""
   return (
     <Highlighter
-      // unhighlightTag={"h3"}
-      className="resaltado__wrapper"
-      highlightTag={"span"}
+      className="resaltadoContainerH3"
       highlightClassName="resaltado"
       searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
       autoEscape={true}
       textToHighlight={childrenToString}
-      // findChunks={findChunksSoloPalabra}
+      findChunks={findChunksSoloPalabra}
     />
   )
 }
 
+// Parrafo
 export const HighlighterP = ({ children }) => {
+  // Italic
+  if (typeof children[0] === "object" && children[0].type === "em") {
+    const childrenItalicToString = children[0].props.children[0] || ""
+    return (
+      <Highlighter
+        className="resaltadoContainerEm"
+        highlightClassName="resaltado"
+        searchWords={removeSeparators(palabrasBusqueda).concat(
+          palabrasAResaltar
+        )}
+        autoEscape={true}
+        textToHighlight={childrenItalicToString}
+        findChunks={findChunksSoloPalabra}
+      />
+    )
+  }
+
   const childrenToString = children[0] || ""
   return (
     <Highlighter
-      unhighlightTag={"p"}
-      className="resaltado__wrapper"
-      highlightTag={"span"}
+      className="resaltadoContainerP"
       highlightClassName="resaltado"
       searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
       autoEscape={true}
       textToHighlight={childrenToString}
-      // findChunks={findChunksSoloPalabra}
+      findChunks={findChunksSoloPalabra}
+    />
+  )
+}
+
+// Resaltado
+export const HighlighterBlockquote = ({ children }) => {
+  const childrenToString = children[0].props.children[0] || ""
+  return (
+    <Highlighter
+      className="resaltadoContainerBQ"
+      highlightClassName="resaltado"
+      searchWords={removeSeparators(palabrasBusqueda).concat(palabrasAResaltar)}
+      autoEscape={true}
+      textToHighlight={childrenToString}
+      findChunks={findChunksSoloPalabra}
     />
   )
 }
