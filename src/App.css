@@ -76,12 +76,30 @@
 }
 
 /* Resaltado */
-.resaltado__wrapper {
-  /* white-space: pre-line; */
+.resaltadoContainerH3 {
+  font-size: 20px;
   line-height: 24px;
-  /* padding: 16px 0; */
+  font-weight: 600;
+}
+.resaltadoContainerP {
+  font-size: 16px;
+  line-height: 26px;
+}
+.resaltadoContainerEm {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 26px;
+}
+.resaltadoContainerBQ {
+  background-color: rgb(229, 229, 229);
+  font-style: italic;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 26px;
 }
 .resaltado {
+  background-color: transparent;
   padding: 0;
   font-weight: bold;
   text-decoration: underline;
