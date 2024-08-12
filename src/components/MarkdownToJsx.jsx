@@ -2,7 +2,6 @@ import Markdown from "markdown-to-jsx"
 
 import {
   HighlighterBlockquote,
-  HighlighterEm,
   HighlighterH3,
   HighlighterP,
 } from "./HighlighterComponent"

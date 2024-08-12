@@ -10,7 +10,6 @@ const MarkedReact = () => {
       <h2>--- Marked-React ---</h2>
       <br />
       <div className="markedReact">
-        {/* <Markdown renderer={HighlighterComponent}> */}
         <Markdown>{mockNoticiaInterna.Content.Text}</Markdown>
       </div>
     </>
